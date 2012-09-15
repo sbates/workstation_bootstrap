@@ -6,13 +6,13 @@ log = Logger.new(STDOUT)
 
 @user = ENV['SUDO_USER'] || ENV['USER']
 @uid = ENV['SUDO_UID'].to_i
-dwdir = "/Users/#{@user}/developer_workstation"
+dwdir = "/Users/#{@user}/workstation_bootstrap"
 chefdir = "/opt/opscode"
 
 # Account for both windows and osx
 if ENV['windir'] # hey it's Windows!
   # We've already got everything we need for windows to kick off chef
-  exec("chef-solo -c #{ENV['HOME']}/developer_workstation/chef-solo/solo.rb")
+  exec("chef-solo -c #{ENV['HOME']}/workstation_bootstrap/chef-solo/solo.rb")
 else
 
 #It's OSX 
@@ -63,7 +63,7 @@ else
   # If everything looks good, kick off chef-solo
   if sudoed? && localed?
     puts "You're now ready to run chef.\n"
-    exec("sudo -u #{@user} -i '\/Users\/#{@user}\/developer_workstation\/runchef'")
+    exec("sudo -u #{@user} -i '\/Users\/#{@user}\/workstation_bootstrap\/runchef'")
    else puts "You are not sudoed or localed. Chef can't run"
   end
   ## TODO: Remove user from sudoers
