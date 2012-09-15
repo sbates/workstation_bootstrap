@@ -1,0 +1,4 @@
+#! /bin/bash
+me=`whoami`
+export PATH=/opt/opscode/embedded/bin:$PATH
+/usr/bin/chef-solo -c "/Users/${me}/developer_workstation/chef-solo/solo.rb"
