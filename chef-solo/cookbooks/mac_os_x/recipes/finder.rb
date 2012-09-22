@@ -36,7 +36,7 @@ end
 mac_os_x_userdefaults "show all files in Finder" do
   domain "com.apple.finder"
   key "AppleShowAllFiles"
-  value false
+  value true
   type "bool"
 end
 

@@ -18,3 +18,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#
+%w{finder
+  itunes   
+  key_repeat   
+  lion_mail    
+  screensaver    
+  dock_preferences 
+  firewall   
+  kbaccess   
+  lion_ical    
+  lion_tweaks    
+  settings
+}.each do |app|
+  include_recipe "mac_ox_x::#{app}"
+end

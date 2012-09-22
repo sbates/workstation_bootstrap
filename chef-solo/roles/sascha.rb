@@ -4,6 +4,7 @@ case ENV['windir']
   when nil
     # mac
     run_list  "developer_workstation::prep", 
+              "mac_ox_x"
               "build-essential", 
               "git", 
               "homebrew", 
@@ -11,7 +12,9 @@ case ENV['windir']
               "rvm::user", 
               "1password",
               "ghmac",
-              "iterm2"
+              "iterm2",
+              "chrome",
+              "dropbox"
   else
     # windows
     run_list "util", "developer_workstation::svn_checkout"
