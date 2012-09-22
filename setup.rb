@@ -7,7 +7,7 @@ log = Logger.new(STDOUT)
 @user = ENV['SUDO_USER'] || ENV['USER']
 @uid = ENV['SUDO_UID'].to_i
 dwdir = "/Users/#{@user}/workstation_bootstrap"
-chefdir = "/opt/opscode"
+chefdir = "/opt/chef"
 
 # Account for both windows and osx
 if ENV['windir'] # hey it's Windows!
