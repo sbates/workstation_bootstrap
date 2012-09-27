@@ -27,9 +27,8 @@
   dock_preferences 
   firewall   
   kbaccess   
-  lion_ical    
   lion_tweaks    
   settings
 }.each do |app|
-  include_recipe "mac_ox_x::#{app}"
+  include_recipe "mac_os_x::#{app}"
 end
